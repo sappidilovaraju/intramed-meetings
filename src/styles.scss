@@ -1,0 +1,75 @@
+@import '~bootstrap/scss/bootstrap';
+
+// variables
+$light-blue: #2988b5 !default;
+$dark-blue : #1b5875 !default;
+$light-grey: #dedede !default;
+$dark-grey : #aaaaaa !default;
+$text      : #555555 !default;
+$dark-red  : #a93a44 !default;
+$light-red : #ffe8ea !default;
+
+body {
+    background-color: $light-grey;
+}
+
+.header {
+    background-color: white;
+    height          : 60px;
+    text-align      : center;
+    border-bottom   : 2px solid $dark-grey;
+
+    .logo {
+        img {
+            padding-top   : 10px;
+            padding-bottom: 10px;
+            height        : 60px;
+        }
+    }
+}
+
+.title {
+    margin-top      : 2rem;
+    margin-bottom   : 2rem;
+    width           : 100%;
+    height          : 45px;
+    font-size       : 27px;
+    color           : white;
+    text-transform  : uppercase;
+    text-align      : center;
+    background-color: $light-blue;
+}
+
+.card {
+    width : 40%;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.form-group {
+    label {
+        font-weight: 700;
+    }
+}
+
+.btn-primary,
+.btn-primary:hover {
+    background-color: $dark-blue;
+    border-color: $dark-blue;
+}
+
+.is-invalid {
+    color: $dark-red;
+    background-color: $light-red;
+}
+
+.text-danger {
+    color: $dark-red;
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}

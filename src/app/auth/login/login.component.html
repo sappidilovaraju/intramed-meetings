@@ -1,0 +1,32 @@
+<div class="title">login</div>
+<div class="row">
+    <div class="col-md-12">
+        <form [formGroup]="loginFormGroup" (ngSubmit)="login()">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Please enter the case sensitive password from your official invitation.</p>
+                            <div class="form-group">
+                                <label for="password"
+                                    [ngClass]="{'text-danger': submitted && loginFormGroup.get('password')?.errors?.required }">Password:
+                                    <span>*</span></label>
+                                <input type="password" class="form-control" id="password" formControlName="password"
+                                    [ngClass]="{'is-invalid': submitted && loginFormGroup.get('password')?.errors?.required }" />
+                                <!-- <span class="text-danger"
+                                    *ngIf="submitted && loginFormGroup.get('password')?.errors?.required">
+                                    Please enter Password
+                                </span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+.wizard {
+    width        : 30%;
+    margin       : auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .wizard {
+        width: 100%;
+    }
+}

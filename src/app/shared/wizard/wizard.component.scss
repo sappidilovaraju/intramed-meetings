@@ -1,0 +1,72 @@
+@import '../../../styles.scss';
+
+.progressbar {
+    position       : relative;
+    display        : flex;
+    justify-content: space-between;
+    counter-reset  : step;
+    margin         : 2rem 0 3rem
+}
+
+.progressbar::before,
+.progress {
+    content         : "";
+    position        : absolute;
+    top             : 50%;
+    transform       : translateY(-50%);
+    height          : 4px;
+    width           : 100%;
+    background-color: white;
+    z-index         : 1
+}
+
+.progress {
+    background-color: $dark-blue;
+    transition      : 0.3s
+}
+
+.progress-step {
+    width           : 1.75rem;
+    height          : 1.75rem;
+    background-color: white;
+    border-radius   : 5px;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    z-index         : 1
+}
+
+.progress-step::before {
+    counter-increment: step;
+    content          : counter(step)
+}
+
+.progress-step::after {
+    content  : attr(data-title);
+    text-transform: uppercase;
+    position : absolute;
+    top      : calc(100% + 0.5rem);
+    font-size: 0.75rem;
+    color    : $dark-blue;
+}
+
+.progress-step-active {
+    background-color: $dark-blue;
+    color           : #f3f3f3
+}
+
+.progress-step-check {
+    position: relative;
+    background-color: green !important;
+    transition: all 0.8s
+}
+
+.progress-step-check::before {
+    position: absolute;
+    content: '\2713';
+    width: 100%;
+    height: 100%;
+    top: 8px;
+    left: 13px;
+    font-size: 12px
+}
